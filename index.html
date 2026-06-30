@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capellán Santana Legal — Abogados en Puerto Plata, RD</title>
+  <style>
+    @font-face {
+      font-family: 'Gravesend Sans';
+      src: url('assets/Gravesend_Sans_Light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Gravesend Sans';
+      src: url('assets/Gravesend_Sans_Medium.otf') format('opentype');
+      font-weight: 400 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Gravesend Sans';
+      src: url('assets/Gravesend_Sans_Bold.otf') format('opentype');
+      font-weight: 600 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <style>
+    /* ==============================
+       RESET & BASE
+    ============================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #08101E;
+      --navy2:     #0D1829;
+      --navy3:     #142035;
+      --gold:      #C8A96E;
+      --gold-l:    #DFC28A;
+      --gold-d:    #A0803A;
+      --white:     #F5F0E8;
+      --muted:     #8A96A8;
+      --border:    rgba(200,169,110,0.15);
+      --glow:      0 0 60px rgba(200,169,110,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Gravesend Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ==============================
+       GRAIN TEXTURE OVERLAY
+    ============================== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* ==============================
+       TYPOGRAPHY
+    ============================== */
+    h1, h2, h3, h4 {
+      font-family: 'Gravesend Sans', sans-serif;
+      line-height: 1.2;
+    }
+
+    .eyebrow {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ==============================
+       SCROLL REVEAL
+    ============================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+    .delay-6 { transition-delay: 0.6s; }
+
+    /* ==============================
+       NAV
+    ============================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.25rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(8, 16, 30, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .nav-logo-name {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo-sub {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.55rem 1.4rem;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* ==============================
+       HAMBURGER & MOBILE MENU
+    ============================== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      z-index: 1100;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--navy);
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .mobile-menu-links a {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      display: block;
+      transition: color 0.3s;
+      text-transform: uppercase;
+    }
+    .mobile-menu-links a:hover { color: var(--gold); }
+    .mobile-menu-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.9rem 2.5rem;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .mobile-menu-cta:hover { background: var(--gold-l); }
+    .mobile-menu-contact {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .mobile-menu-contact a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(8,16,30,0.92) 45%, rgba(8,16,30,0.6) 100%),
+        linear-gradient(to top, rgba(8,16,30,0.7) 0%, transparent 60%);
+    }
+
+    .hero-line {
+      position: absolute;
+      top: 0;
+      left: 5%;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--gold-d), transparent);
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.5s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.7s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.9s forwards;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--gold-l);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 5%;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.2s forwards;
+    }
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      animation: slideLine 2s ease-in-out infinite 1.5s;
+    }
+    .scroll-text {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Stats bar */
+    .hero-stats {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 1s ease 1s forwards;
+    }
+    .hero-stat {
+      padding: 1.5rem 2.5rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ==============================
+       SECTION BASE
+    ============================== */
+    section {
+      padding: 7rem 5%;
+    }
+
+    .section-header {
+      margin-bottom: 4rem;
+    }
+    .section-header .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .section-header .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      color: var(--white);
+      max-width: 640px;
+    }
+    .section-title em { color: var(--gold); font-style: italic; }
+
+    /* ==============================
+       FIRMA (ABOUT)
+    ============================== */
+    #firma {
+      background: var(--navy2);
+      position: relative;
+      overflow: hidden;
+    }
+    #firma::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200,169,110,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .firma-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .firma-body p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .firma-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .firma-quote {
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+    }
+    .firma-quote p {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--white) !important;
+      margin: 0 !important;
+      line-height: 1.5;
+    }
+
+    .firma-values {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .valor-item {
+      background: var(--navy3);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s, transform 0.3s;
+    }
+    .valor-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,169,110,0.05) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .valor-item:hover {
+      border-color: rgba(200,169,110,0.4);
+      transform: translateY(-3px);
+    }
+    .valor-item:hover::before { opacity: 1; }
+
+    .valor-num {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(200,169,110,0.15);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      line-height: 1;
+    }
+    .valor-title {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .valor-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       ÁREAS DE PRÁCTICA
+    ============================== */
+    #areas {
+      background: var(--navy);
+      position: relative;
+    }
+
+    .areas-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 3rem;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .area-card {
+      background: var(--navy2);
+      border: 1px solid var(--border);
+      padding: 2.2rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.4s;
+    }
+    .area-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+    .area-card:hover {
+      background: var(--navy2);
+    }
+    .area-card:hover::after { width: 100%; }
+
+    .area-icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 1.2rem;
+      display: block;
+      color: var(--gold);
+      opacity: 0.85;
+    }
+    .area-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .area-name {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .area-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       BANNER INTERMEDIO
+    ============================== */
+    #banner {
+      padding: 5rem 5%;
+      background: linear-gradient(135deg, var(--navy3) 0%, var(--navy2) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(200,169,110,0.07) 0%, transparent 70%);
+    }
+    .banner-title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .banner-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       PROFESIONALES
+    ============================== */
+    #profesionales {
+      background: var(--navy2);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .team-card {
+      background: var(--navy3);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s, transform 0.3s;
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .team-card:hover {
+      border-color: rgba(200,169,110,0.3);
+      transform: translateY(-5px);
+    }
+    .team-card:hover::before { opacity: 1; }
+
+    .team-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      margin-bottom: 1.2rem;
+      background: var(--navy3);
+    }
+    .team-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .team-name {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .team-role {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .team-divider {
+      width: 30px;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1rem;
+    }
+    .team-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .team-card {
+      cursor: pointer;
+    }
+
+    /* ==============================
+       MODAL
+    ============================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8,16,30,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-box {
+      background: var(--navy2);
+      border: 1px solid var(--border);
+      max-width: 680px;
+      width: 100%;
+      max-height: 88vh;
+      position: relative;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.35s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-body {
+      overflow-y: auto;
+      flex: 1;
+    }
+    .modal-info {
+      overflow-y: auto;
+    }
+    .modal-overlay.open .modal-box {
+      transform: translateY(0) scale(1);
+    }
+    .modal-top {
+      height: 4px;
+      background: linear-gradient(to right, var(--gold-d), var(--gold-l), var(--gold-d));
+    }
+    .modal-body {
+      display: block;
+    }
+    .modal-photo {
+      display: none;
+    }
+    .modal-info {
+      padding: 2rem 2.4rem 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .modal-name {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+    .modal-role {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .modal-divider {
+      width: 30px;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1.2rem;
+    }
+    .modal-bio {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .modal-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200,169,110,0.3);
+      padding: 0.25rem 0.6rem;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+      line-height: 1;
+    }
+    .modal-close:hover {
+      background: rgba(200,169,110,0.15);
+      color: var(--gold);
+    }
+    @media (max-width: 600px) {
+      .modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+      }
+      .modal-box {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        transform: translateY(100%);
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      .modal-overlay.open .modal-box {
+        transform: translateY(0);
+      }
+      .modal-body {
+        display: block;
+      }
+      .modal-info {
+        padding: 1.4rem 1.4rem 2rem;
+      }
+      .modal-name { font-size: 1.1rem; }
+      .modal-bio { font-size: 0.82rem; }
+    }
+
+    /* --- Modal Servicios --- */
+    .svc-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8,16,30,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .svc-modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .svc-modal-box {
+      background: var(--navy2);
+      border: 1px solid var(--border);
+      max-width: 580px;
+      width: 100%;
+      position: relative;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.35s ease;
+      overflow: hidden;
+    }
+    .svc-modal-overlay.open .svc-modal-box {
+      transform: translateY(0) scale(1);
+    }
+    .svc-modal-top {
+      height: 4px;
+      background: linear-gradient(to right, var(--gold-d), var(--gold-l), var(--gold-d));
+    }
+    .svc-modal-inner {
+      padding: 2.2rem 2.4rem 2.4rem;
+    }
+    .svc-modal-icon {
+      width: 40px;
+      height: 40px;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .svc-modal-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .svc-modal-name {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .svc-modal-divider {
+      width: 36px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1rem 0 1.4rem;
+    }
+    .svc-modal-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .svc-modal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-bottom: 1.8rem;
+    }
+    .svc-modal-list li {
+      font-size: 0.85rem;
+      color: var(--white);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+    .svc-modal-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 0.45rem;
+      flex-shrink: 0;
+    }
+    .svc-modal-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.75rem 1.8rem;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .svc-modal-cta:hover { background: var(--gold-l); }
+    .svc-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .svc-modal-close:hover {
+      background: rgba(200,169,110,0.15);
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .svc-modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+      }
+      .svc-modal-box {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        transform: translateY(100%);
+        max-height: 88vh;
+        overflow-y: auto;
+      }
+      .svc-modal-overlay.open .svc-modal-box {
+        transform: translateY(0);
+      }
+      .svc-modal-inner {
+        padding: 1.5rem 1.4rem 2.5rem;
+      }
+      .svc-modal-name { font-size: 1.1rem; }
+      .svc-modal-desc { font-size: 0.82rem; }
+      .svc-modal-list li { font-size: 0.82rem; }
+      .svc-modal-cta { width: 100%; text-align: center; padding: 0.9rem; }
+    }
+
+    /* ==============================
+       PROCESO
+    ============================== */
+    #proceso {
+      background: var(--navy);
+    }
+
+    .proceso-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+    .proceso-steps::before {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: 2.5rem;
+      right: 2.5rem;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold-d), transparent, var(--gold-d));
+      opacity: 0.3;
+    }
+
+    .step-card {
+      position: relative;
+      padding-top: 1rem;
+    }
+    .step-num {
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: var(--navy);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .step-card:hover .step-num {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .step-title {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       CONTACTO
+    ============================== */
+    #contacto {
+      background: var(--navy2);
+      position: relative;
+      overflow: hidden;
+    }
+    #contacto::before {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200,169,110,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .contact-info-sub {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .contact-item-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .contact-item-value {
+      font-size: 0.95rem;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contact-item-value:hover { color: var(--gold); }
+
+    .contact-socials {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+    .social-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--navy3);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+
+    .form-title {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.8rem;
+      color: var(--white);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 0.85rem 1rem;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s;
+      appearance: none;
+    }
+    .form-control:focus {
+      border-color: rgba(200,169,110,0.5);
+    }
+    .form-control::placeholder { color: var(--muted); }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    select.form-control option {
+      background: var(--navy3);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 1rem;
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover {
+      background: var(--gold-l);
+      transform: translateY(-1px);
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--border);
+      padding: 3rem 5% 2rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo-name {
+      font-family: 'Gravesend Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .footer-logo-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.2rem;
+    }
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: var(--muted);
+      max-width: 260px;
+      line-height: 1.6;
+      margin-top: 0.8rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 4rem;
+    }
+    .footer-col-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-col ul a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-legal a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-legal a:hover { color: var(--white); }
+
+    /* ==============================
+       ANIMATIONS
+    ============================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideLine {
+      0%   { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* ==============================
+       PARALLAX SHAPES
+    ============================== */
+    .parallax-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      #hero { padding-top: 80px; justify-content: center; }
+      .firma-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .proceso-steps { grid-template-columns: 1fr 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-links { gap: 2rem; }
+      .hero-stats { display: none; }
+    }
+    @media (max-width: 580px) {
+      .areas-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .proceso-steps { grid-template-columns: 1fr; }
+      .proceso-steps::before { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-links { flex-direction: column; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       NAV
+  ============================== -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo" style="text-decoration:none;">
+      <img src="assets/Asset_2_4x.png" alt="Capellán Santana Legal" style="height:35px;width:auto;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#firma">La Firma</a></li>
+      <li><a href="#areas">Servicios</a></li>
+      <li><a href="#profesionales">Equipo</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+    </ul>
+    <a href="#contacto" class="nav-cta">CONSULTA CON NOSOTROS</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu-links">
+      <li><a href="#firma" onclick="toggleMenu()">La Firma</a></li>
+      <li><a href="#areas" onclick="toggleMenu()">Servicios</a></li>
+      <li><a href="#profesionales" onclick="toggleMenu()">Equipo</a></li>
+      <li><a href="#proceso" onclick="toggleMenu()">Proceso</a></li>
+    </ul>
+    <a href="#contacto" class="mobile-menu-cta" onclick="toggleMenu()">CONSULTA CON NOSOTROS</a>
+    <div class="mobile-menu-contact">
+      <a href="tel:+18096198150">+1-809-619-8150</a>
+      <a href="mailto:oficina@cslegal.com.do">oficina@cslegal.com.do</a>
+    </div>
+  </div>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow">Abogados en Puerto Plata, RD</span>
+      </div>
+      <h1 class="hero-title">
+        Tu caso merece<br>
+        atención <em>de primer nivel</em>
+      </h1>
+      <p class="hero-sub">
+        Desde 2019, Capellán Santana Legal brinda asesoría jurídica con profesionalismo, eficiencia y la diligencia que cada cliente merece. No eres solo un caso — eres nuestra prioridad.
+      </p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary">CONSULTA CON NOSOTROS</a>
+        <a href="#areas" class="btn-ghost">Ver Servicios</a>
+      </div>
+    </div>
+
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num" data-count="6">0</div>
+        <div class="hero-stat-label">Años de experiencia</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" data-count="12">0</div>
+        <div class="hero-stat-label">Áreas de práctica</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" data-count="5">0</div>
+        <div class="hero-stat-label">Profesionales</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FIRMA
+  ============================== -->
+  <section id="firma">
+    <div class="firma-grid">
+      <div>
+        <div class="section-header reveal">
+          <div class="eyebrow">La Firma</div>
+          <h2 class="section-title">Derecho con <em>propósito</em> y excelencia</h2>
+        </div>
+        <div class="firma-body reveal delay-1">
+          <p>
+            Fundada en 2019, <strong>Capellán Santana Legal</strong> nace con la misión de brindar asesoría legal con el profesionalismo, la eficiencia y la diligencia que cada cliente merece.
+          </p>
+          <div class="firma-quote">
+            <p>"En Capellán Santana, no eres solo un caso más — eres nuestra prioridad."</p>
+          </div>
+          <p>
+            Somos una firma en <strong>constante evolución</strong>, apostando por el conocimiento continuo del derecho dominicano e internacional para garantizar soluciones de calidad. Nuestro enfoque personalizado asegura que cada cliente recibe la atención individualizada que necesita.
+          </p>
+          <p>
+            Operamos desde Puerto Plata sirviendo a clientes nacionales y extranjeros en inversión, negocios, familia e inmigración.
+          </p>
+        </div>
+      </div>
+      <div class="firma-values">
+        <div class="valor-item reveal-right delay-1">
+          <div class="valor-num">01</div>
+          <div class="valor-title">Profesionalismo</div>
+          <div class="valor-desc">Cada asunto es tratado con el más alto estándar ético y técnico, garantizando resultados sólidos y bien fundamentados.</div>
+        </div>
+        <div class="valor-item reveal-right delay-2">
+          <div class="valor-num">02</div>
+          <div class="valor-title">Eficiencia</div>
+          <div class="valor-desc">Gestionamos cada caso con agilidad, minimizando tiempos de espera sin sacrificar la calidad del trabajo.</div>
+        </div>
+        <div class="valor-item reveal-right delay-3">
+          <div class="valor-num">03</div>
+          <div class="valor-title">Atención Personalizada</div>
+          <div class="valor-desc">Tratamos cada situación de forma única, adaptándonos a las necesidades específicas de cada cliente.</div>
+        </div>
+        <div class="valor-item reveal-right delay-4">
+          <div class="valor-num">04</div>
+          <div class="valor-title">Evolución Constante</div>
+          <div class="valor-desc">Nos mantenemos actualizados con la legislación dominicana e internacional para ofrecer la mejor asesoría posible.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       ÁREAS DE PRÁCTICA
+  ============================== -->
+  <section id="areas">
+    <div class="section-header reveal">
+      <div class="eyebrow">Servicios</div>
+      <h2 class="section-title">Áreas de <em>práctica</em></h2>
+    </div>
+    <p class="areas-intro reveal delay-1">
+      Cubrimos todas las ramas del derecho que un individuo, familia o empresa puede necesitar en República Dominicana.
+    </p>
+    <div class="areas-grid">
+      <div class="area-card reveal delay-1" onclick="openSvcModal(this)"
+        data-name="Derecho Inmobiliario y Condominios"
+        data-icon='<svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="13" width="6" height="8"/></svg>'
+        data-desc="Asesoramos todas las operaciones del mercado inmobiliario dominicano, desde la adquisición y venta de propiedades hasta la gestión de regímenes de condominio. Garantizamos la seguridad jurídica de cada transacción mediante un análisis riguroso del título y la situación legal del inmueble."
+        data-items="Compraventa de bienes inmuebles|Due diligence y verificación de títulos|Registro ante la Jurisdicción Inmobiliaria|Contratos de arrendamiento y alquiler|Constitución y gestión de condominios|Hipotecas y garantías reales">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="13" width="6" height="8"/></svg></span>
+        <div class="area-name">Derecho Inmobiliario y Condominios</div>
+        <div class="area-desc">Compraventa, due diligence, registro de títulos, contratos de arrendamiento y gestión de condominios.</div>
+      </div>
+      <div class="area-card reveal delay-2" onclick="openSvcModal(this)"
+        data-name="Inversión Extranjera"
+        data-icon='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9M3 12h18"/></svg>'
+        data-desc="Acompañamos a inversores extranjeros en cada etapa de su proceso de entrada al mercado dominicano. Desde la estructuración legal del proyecto hasta la obtención de los permisos necesarios, garantizamos que su inversión esté protegida y cumpla con la normativa vigente."
+        data-items="Estructuración legal de inversiones|Constitución de sociedades para inversores|Régimen especial de zonas francas|Incentivos fiscales a la inversión (Ley 158-01)|Contratos de joint venture y asociación|Representación ante organismos gubernamentales">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9M3 12h18"/></svg></span>
+        <div class="area-name">Inversión Extranjera</div>
+        <div class="area-desc">Asesoría integral para inversores internacionales que buscan establecerse o invertir en República Dominicana.</div>
+      </div>
+      <div class="area-card reveal delay-3" onclick="openSvcModal(this)"
+        data-name="Derecho de Familia"
+        data-icon='<svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="18" cy="7" r="2"/><path d="M22 21v-1.5a3 3 0 0 0-2.5-2.96"/></svg>'
+        data-desc="Brindamos acompañamiento legal en los asuntos más sensibles de la vida personal y familiar, con profesionalismo y discreción. Entendemos que cada situación familiar es única y trabajamos para proteger los derechos e intereses de nuestros clientes y sus familias."
+        data-items="Divorcios por mutuo acuerdo y contenciosos|Custodia y régimen de visitas|Pensiones alimenticias|Adopciones nacionales e internacionales|Partición de bienes conyugales|Reconocimiento de paternidad|Testamentos y sucesiones">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="18" cy="7" r="2"/><path d="M22 21v-1.5a3 3 0 0 0-2.5-2.96"/></svg></span>
+        <div class="area-name">Derecho de Familia</div>
+        <div class="area-desc">Divorcios, custodia, pensiones alimenticias, adopciones y servicios legales individuales.</div>
+      </div>
+      <div class="area-card reveal delay-1" onclick="openSvcModal(this)"
+        data-name="Derecho Fiscal"
+        data-icon='<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/></svg>'
+        data-desc="Ofrecemos asesoría tributaria integral para personas físicas y empresas, asegurando el cumplimiento fiscal y optimizando la carga impositiva dentro del marco legal. Representamos a nuestros clientes ante la DGII en auditorías, impugnaciones y procedimientos administrativos."
+        data-items="Planificación y optimización tributaria|Declaraciones fiscales y cumplimiento|Representación ante la DGII|Impugnación de actos administrativos fiscales|Incentivos y exenciones fiscales|Fiscalidad para inversores extranjeros">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/></svg></span>
+        <div class="area-name">Derecho Fiscal</div>
+        <div class="area-desc">Planificación tributaria, cumplimiento fiscal, representación ante la DGII y optimización impositiva.</div>
+      </div>
+      <div class="area-card reveal delay-2" onclick="openSvcModal(this)"
+        data-name="Derecho Corporativo y Empresarial"
+        data-icon='<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="9" y1="11" x2="9" y2="11.01"/><line x1="15" y1="11" x2="15" y2="11.01"/><line x1="9" y1="15" x2="9" y2="15.01"/><line x1="15" y1="15" x2="15" y2="15.01"/></svg>'
+        data-desc="Acompañamos a empresas en todas las etapas de su ciclo de vida, desde la constitución hasta la liquidación, pasando por reestructuraciones y operaciones de M&A. Combinamos rigor jurídico con visión empresarial para proteger y hacer crecer su negocio."
+        data-items="Constitución de sociedades (SRL, SA, EIRL)|Contratos comerciales y mercantiles|Fusiones y adquisiciones (M&A)|Gobierno corporativo y compliance|Acuerdos de accionistas|Reestructuración empresarial|Due diligence corporativo">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="9" y1="11" x2="9" y2="11.01"/><line x1="15" y1="11" x2="15" y2="11.01"/><line x1="9" y1="15" x2="9" y2="15.01"/><line x1="15" y1="15" x2="15" y2="15.01"/></svg></span>
+        <div class="area-name">Derecho Corporativo y Empresarial</div>
+        <div class="area-desc">Constitución de empresas, contratos comerciales, fusiones, adquisiciones y gobierno corporativo.</div>
+      </div>
+      <div class="area-card reveal delay-3" onclick="openSvcModal(this)"
+        data-name="Propiedad Intelectual"
+        data-icon='<svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.3 6l-.7.7V18H9v-2.3l-.7-.7A7 7 0 0 1 12 2z"/></svg>'
+        data-desc="Protegemos los activos intangibles de su empresa o marca ante la ONAPI y organismos internacionales. La propiedad intelectual es uno de los activos más valiosos de cualquier negocio y su protección adecuada es clave para la competitividad a largo plazo."
+        data-items="Registro de marcas y nombres comerciales|Patentes de invención y modelos de utilidad|Derechos de autor y obras protegidas|Diseños industriales|Vigilancia y oposición de marcas|Licencias y franquicias|Defensa ante infracciones">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.3 6l-.7.7V18H9v-2.3l-.7-.7A7 7 0 0 1 12 2z"/></svg></span>
+        <div class="area-name">Propiedad Intelectual</div>
+        <div class="area-desc">Registro de marcas, patentes, derechos de autor y protección de activos intangibles.</div>
+      </div>
+      <div class="area-card reveal delay-1" onclick="openSvcModal(this)"
+        data-name="Derecho Migratorio"
+        data-icon='<svg viewBox="0 0 24 24"><path d="M21 16l-4-4V5a2 2 0 0 0-4 0v7l-4 4H3l2 3 4-1 2 3 2-3 4 1 2-3h-6z"/></svg>'
+        data-desc="Asistimos a extranjeros en todos los procesos migratorios en República Dominicana, desde la obtención de visas temporales hasta la residencia permanente y la naturalización. Conocemos en detalle los procedimientos de la Dirección General de Migración."
+        data-items="Visas de negocios, rentistas e inversionistas|Residencia temporal y permanente|Naturalización dominicana|Permisos de trabajo para extranjeros|Regularización migratoria|Reunificación familiar|Asesoría a empresas con empleados extranjeros">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><path d="M21 16l-4-4V5a2 2 0 0 0-4 0v7l-4 4H3l2 3 4-1 2 3 2-3 4 1 2-3h-6z"/></svg></span>
+        <div class="area-name">Derecho Migratorio</div>
+        <div class="area-desc">Residencias, visas, naturalización y asesoría migratoria para extranjeros en República Dominicana.</div>
+      </div>
+      <div class="area-card reveal delay-2" onclick="openSvcModal(this)"
+        data-name="Litigios y Resolución de Conflictos"
+        data-icon='<svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 21h14M3 7l9-4 9 4"/><path d="M5 7l-2 6c0 1.7 1.3 3 3 3s3-1.3 3-3L7 7"/><path d="M15 7l-2 6c0 1.7 1.3 3 3 3s3-1.3 3-3L17 7"/></svg>'
+        data-desc="Representamos a nuestros clientes con determinación ante los tribunales dominicanos y en procedimientos de resolución alternativa de conflictos. Evaluamos cada caso con rigor para diseñar la estrategia más efectiva, priorizando siempre la solución más eficiente."
+        data-items="Representación en tribunales de primera instancia y apelación|Arbitraje nacional e internacional|Mediación y conciliación|Ejecución de sentencias y laudos|Medidas cautelares y provisionales|Cobro de deudas y acreencias|Litigios comerciales y civiles">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 21h14M3 7l9-4 9 4"/><path d="M5 7l-2 6c0 1.7 1.3 3 3 3s3-1.3 3-3L7 7"/><path d="M15 7l-2 6c0 1.7 1.3 3 3 3s3-1.3 3-3L17 7"/></svg></span>
+        <div class="area-name">Litigios y Resolución de Conflictos</div>
+        <div class="area-desc">Representación judicial, arbitraje y mediación para la resolución eficiente de disputas.</div>
+      </div>
+      <div class="area-card reveal delay-3" onclick="openSvcModal(this)"
+        data-name="Derecho Laboral"
+        data-icon='<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="8" y1="12" x2="8" y2="16"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="16" y1="12" x2="16" y2="16"/></svg>'
+        data-desc="Asesoramos tanto a empleadores como a trabajadores en todas las materias regidas por el Código Laboral dominicano. Ayudamos a las empresas a gestionar sus relaciones laborales de forma eficiente y conforme a la ley, minimizando riesgos y resolviendo conflictos con celeridad."
+        data-items="Redacción de contratos de trabajo|Despidos y liquidaciones laborales|Representación ante el Ministerio de Trabajo|Reglamentos internos de trabajo|Conflictos colectivos y sindicatos|Acoso laboral y discriminación|Auditoría laboral para empresas">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="8" y1="12" x2="8" y2="16"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="16" y1="12" x2="16" y2="16"/></svg></span>
+        <div class="area-name">Derecho Laboral</div>
+        <div class="area-desc">Contratos, despidos, representación ante el Ministerio de Trabajo y resolución de conflictos laborales.</div>
+      </div>
+      <div class="area-card reveal delay-1" onclick="openSvcModal(this)"
+        data-name="Derecho Administrativo"
+        data-icon='<svg viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="3,10 12,3 21,10"/><line x1="6" y1="10" x2="6" y2="21"/><line x1="10" y1="10" x2="10" y2="21"/><line x1="14" y1="10" x2="14" y2="21"/><line x1="18" y1="10" x2="18" y2="21"/></svg>'
+        data-desc="Gestionamos las relaciones de nuestros clientes con el Estado dominicano y sus instituciones, asegurando el cumplimiento normativo y la defensa de sus derechos frente a actuaciones administrativas. Conocemos los procedimientos ante ministerios, ayuntamientos y organismos reguladores."
+        data-items="Obtención de permisos y licencias|Recursos administrativos y contencioso-administrativos|Contratos con el Estado y licitaciones|Regulación sectorial (turismo, construcción, energía)|Sanciones y procedimientos administrativos|Responsabilidad patrimonial del Estado">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="3,10 12,3 21,10"/><line x1="6" y1="10" x2="6" y2="21"/><line x1="10" y1="10" x2="10" y2="21"/><line x1="14" y1="10" x2="14" y2="21"/><line x1="18" y1="10" x2="18" y2="21"/></svg></span>
+        <div class="area-name">Derecho Administrativo</div>
+        <div class="area-desc">Relaciones con el Estado, permisos, licencias y recursos administrativos ante entidades gubernamentales.</div>
+      </div>
+      <div class="area-card reveal delay-2" onclick="openSvcModal(this)"
+        data-name="Derecho Constitucional"
+        data-icon='<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/></svg>'
+        data-desc="Defendemos los derechos fundamentales garantizados por la Constitución dominicana, tanto de personas físicas como jurídicas. Intervenimos cuando actuaciones del Estado o de terceros vulneran derechos constitucionales, utilizando los mecanismos de tutela previstos en el ordenamiento jurídico."
+        data-items="Acción de amparo constitucional|Habeas corpus|Acción directa en inconstitucionalidad|Defensa de derechos fundamentales|Consultas sobre constitucionalidad de normas|Representación ante el Tribunal Constitucional">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/></svg></span>
+        <div class="area-name">Derecho Constitucional</div>
+        <div class="area-desc">Protección de derechos fundamentales, acciones constitucionales y amparo.</div>
+      </div>
+      <div class="area-card reveal delay-3" onclick="openSvcModal(this)"
+        data-name="Derecho de la Construcción"
+        data-icon='<svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.5"/></svg>'
+        data-desc="Asesoramos a promotores, constructores, contratistas y propietarios en todos los aspectos legales del sector de la construcción. Desde la obtención de permisos hasta la resolución de disputas entre las partes de un contrato de obra, cubrimos todo el ciclo del proyecto constructivo."
+        data-items="Contratos de obra y subcontratación|Permisos y licencias de construcción|Reclamaciones por vicios de construcción|Disputas entre promotores y compradores|Responsabilidad de constructores y técnicos|Proyectos turísticos e inmobiliarios">
+        <span class="area-icon"><svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.5"/></svg></span>
+        <div class="area-name">Derecho de la Construcción</div>
+        <div class="area-desc">Contratos de obra, permisos de construcción, reclamaciones y disputas del sector inmobiliario.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BANNER
+  ============================== -->
+  <div id="banner">
+    <h2 class="banner-title reveal">
+      ¿Tienes un asunto legal?<br>
+      <em style="color:var(--gold);">Hablemos hoy.</em>
+    </h2>
+    <p class="banner-sub reveal delay-1">
+      La primera consulta es gratuita. Cuéntanos tu situación y te orientamos sin compromiso.
+    </p>
+    <a href="#contacto" class="btn-primary reveal delay-2">CONSULTA CON NOSOTROS</a>
+  </div>
+
+  <!-- ==============================
+       PROFESIONALES
+  ============================== -->
+  <section id="profesionales">
+    <div class="section-header reveal">
+      <div class="eyebrow">El Equipo</div>
+      <h2 class="section-title">Los <em>profesionales</em> detrás de tu caso</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal delay-1" onclick="openModal(this)"
+        data-name="Lic. Francisco Capellán Martínez"
+        data-role="Socio – Abogado"
+        data-photo="https://capellansantanalegal.com/wp-content/uploads/2025/05/Artboard-1.png"
+        data-bio="El Lic. Francisco Capellán Martínez es un abogado con más de una década de experiencia en el ejercicio profesional del derecho, con una formación sólida y una clara vocación por la excelencia académica, la ética jurídica y el desarrollo humano.
+
+Graduado Summa Cum Laude en Derecho por la Universidad O&M en el año 2013, ha complementado su perfil con una segunda licenciatura en Educación, mención Lenguas Modernas (Inglés), también Summa Cum Laude en 2019. Esta doble formación le ha permitido desarrollar una visión integral del derecho, con especial sensibilidad hacia la comunicación, la educación y el enfoque multicultural.
+
+Ha cursado una Maestría en Derecho Constitucional en la Universidad Abierta Para Adultos (UAPA) y una Maestría en Lingüística Aplicada al Idioma Inglés en la Universidad Autónoma de Santo Domingo (UASD), ambas finalizadas en 2025, lo que evidencia su permanente compromiso con el aprendizaje interdisciplinario.
+
+Dentro de su experiencia profesional, ha trabajado como abogado en Capellán & Asociados (2009–2018), se ha desempeñado como consultor y asesor legal para Norton Marketing Management, S.R.L., y ha ocupado posiciones clave en Active Labor Solutions, S.R.L., incluyendo la gerencia de Recursos Humanos desde el año 2020 hasta la fecha.
+
+Su preparación académica se complementa con estudios especializados en Derecho Migratorio, Comunicación Social, Gestión Moderna del Talento Humano y Contabilidad. Domina los idiomas inglés y francés con fluidez, y posee conocimientos básicos de alemán. Reconocido por su responsabilidad, discreción y sentido ético, practica el derecho con enfoque humano y compromiso firme con soluciones sostenibles y justas."
+        data-tags="Derecho Constitucional,Derecho Migratorio,RRHH,Multilingüe">
+        <div class="team-avatar"><img src="assets/photo-02.png" alt="Francisco Capellán Martínez" /></div>
+        <div class="team-name">Lic. Francisco Capellán Martínez</div>
+        <div class="team-role">Socio – Abogado</div>
+        <div class="team-divider"></div>
+        <div class="team-desc">Abogado Summa Cum Laude, especialista en Derecho Constitucional y Migratorio. Multilingüe: español, inglés y francés.</div>
+      </div>
+      <div class="team-card reveal delay-2" onclick="openModal(this)"
+        data-name="Francisco Ernesto Santana Fitch"
+        data-role="Socio – Abogado"
+        data-photo="assets/photo-01.png"
+        data-bio="Con más de siete años de experiencia en el ejercicio del Derecho, Francisco Ernesto Santana Fitch ha forjado una trayectoria sólida como abogado litigante, asesor legal y formador académico. Egresado de la Universidad Abierta Para Adultos (UAPA), cuenta con una licenciatura en Derecho y dos maestrías: una en Derecho Civil y Procesal Civil Contemporáneos, y otra en Derecho Constitucional. Su formación se complementa con estudios especializados en lavado de activos y derecho societario en el contexto de los Estados Unidos.
+
+En su práctica profesional, se ha destacado en áreas como el Derecho de Familia, el Derecho Inmobiliario, el Derecho Contractual y el Derecho Comercial y Societario. Actualmente, se desempeña como abogado en el ejercicio, asesor legal de la Fundación Cultura Viva y catedrático en la Universidad O&M, recinto Puerto Plata, donde imparte asignaturas clave en el área del Derecho.
+
+Francisco se distingue por un enfoque centrado en el cliente, entendiendo el Derecho como una herramienta de servicio. Su compromiso profesional se basa en ofrecer representación jurídica de excelencia, desde el primer contacto hasta la conclusión del proceso, garantizando claridad, integridad y acompañamiento constante. Domina los idiomas español e inglés."
+        data-tags="Derecho Civil,Derecho de Familia,Derecho Inmobiliario,Derecho Corporativo">
+        <div class="team-avatar"><img src="assets/photo-01.png" alt="Francisco Santana" /></div>
+        <div class="team-name">Francisco Ernesto Santana Fitch</div>
+        <div class="team-role">Socio – Abogado</div>
+        <div class="team-divider"></div>
+        <div class="team-desc">Especialista en Derecho Civil, Constitucional y Corporativo. Catedrático universitario y asesor legal con más de 7 años de experiencia.</div>
+      </div>
+      <div class="team-card reveal delay-3" onclick="openModal(this)"
+        data-name="Dr. Francisco Capellán"
+        data-role="Of Counsel – Notario Público"
+        data-photo="https://capellansantanalegal.com/wp-content/uploads/2025/05/Artboard-4.png"
+        data-bio="El Dr. Francisco Capellán es un destacado abogado con más de tres décadas de ejercicio profesional, reconocido por su sólida trayectoria en las áreas de derecho civil, inmobiliario, administrativo, comercial y penal. Egresado de la Universidad Autónoma de Santo Domingo (UASD) como Doctor en Leyes en el año 1990, ha dedicado su carrera a la práctica jurídica, la docencia universitaria y al servicio público.
+
+Cuenta con una Maestría en Derecho Inmobiliario (2013) y una Maestría en Derecho Constitucional (2025), ambas cursadas en la Universidad Abierta Para Adultos (UAPA). Desde 1991, ejerce como Notario Público, función que ha complementado con su liderazgo al frente de la firma Capellán & Asociados, S.R.L.
+
+En el ámbito público, fue Oficial del Estado Civil de la Primera Circunscripción de Puerto Plata (2007–2011) y asesor legal de la Contraloría General de la República (2016–2020). Con vocación constante por la educación, es catedrático de la carrera de Derecho en la Universidad O&M, recinto Puerto Plata, desde 1996, y dirige la Facultad de Derecho desde el año 2000.
+
+Su trayectoria internacional incluye su participación en el congreso sobre Marketing Político y Diálogo Ciudadano ante la Universidad George Washington y la ONU (2007). En 2015, fue distinguido por el Tribunal Constitucional de la República Dominicana por su defensa de la constitucionalidad y su postura en la emblemática Sentencia 168-13."
+        data-tags="Derecho Civil,Derecho Inmobiliario,Derecho Constitucional,Notaría">
+        <div class="team-avatar"><img src="assets/photo-05.png" alt="Dr. Francisco Capellán" /></div>
+        <div class="team-name">Dr. Francisco Capellán</div>
+        <div class="team-role">Of Counsel – Notario Público</div>
+        <div class="team-divider"></div>
+        <div class="team-desc">Más de 30 años de trayectoria. Notario Público desde 1991, Director de la Facultad de Derecho en la O&M y ex-asesor de la Contraloría General.</div>
+      </div>
+      <div class="team-card reveal delay-1" onclick="openModal(this)"
+        data-name="Carolina Ricci"
+        data-role="Of Counsel – Traductora Jurídica"
+        data-photo="https://capellansantanalegal.com/wp-content/uploads/2025/05/Artboard-6-1.png"
+        data-bio="Abogada egresada de la Pontificia Universidad Católica Madre y Maestra (PUCMM) desde 2007. Con amplia experiencia laboral, ha trabajado en bufetes de renombre de la zona Norte de la República Dominicana, así como en instituciones gubernamentales, donde obtuvo amplia experiencia en Derecho Tributario, Corporativo e Inmobiliario.
+
+Desde 2018, fue nombrada por la Procuraduría General de la República Dominicana a través de la Escuela Nacional de la Judicatura, como intérprete y traductora oficial del idioma italiano, avalada por la Embajada de Italia.
+
+El compromiso y la excelencia se reflejan en su ética de trabajo, siempre orientada a brindar soluciones claras y efectivas para sus clientes. Su enfoque en la atención personalizada y su dedicación para cumplir con los más altos estándares de calidad hacen de ella una opción preferida para quienes requieren servicios legales y de traducción de alta precisión."
+        data-tags="Derecho Tributario,Derecho Corporativo,Derecho Inmobiliario,Traducción Italiana">
+        <div class="team-avatar"><img src="assets/photo-06.png" alt="Carolina Ricci" /></div>
+        <div class="team-name">Carolina Ricci</div>
+        <div class="team-role">Of Counsel – Traductora Jurídica</div>
+        <div class="team-divider"></div>
+        <div class="team-desc">Abogada egresada de la PUCMM. Traductora oficial de italiano avalada por la Embajada de Italia. Experta en Derecho Tributario, Corporativo e Inmobiliario.</div>
+      </div>
+      <div class="team-card reveal delay-2" onclick="openModal(this)"
+        data-name="Ana Ulloa"
+        data-role="Contadora y Financiera"
+        data-photo="https://capellansantanalegal.com/wp-content/uploads/2025/05/Artboard-5.png"
+        data-bio="Socia Directora de Ulloa & Asociados, Ana Ulloa cuenta con más de 15 años de experiencia brindando asesoría contable y financiera a empresas de distintos sectores. Especialista en contabilidad fiscal y tributaria, posee una Maestría en Finanzas que le permite integrar estratégicamente la contabilidad con la gestión financiera.
+
+Lidera un equipo comprometido con la transparencia contable, la optimización fiscal y el cumplimiento normativo, ofreciendo soluciones que fortalecen la toma de decisiones empresariales. Domina herramientas como QuickBooks y Alegra, y cuenta con amplia experiencia en contabilidad para entidades sin fines de lucro, presupuestación, análisis financiero y declaraciones fiscales.
+
+Es miembro del Instituto de Contadores Públicos Autorizados y ha participado en seminarios internacionales de auditoría forense y peritajes contables. Habla español e inglés."
+        data-tags="Contabilidad Fiscal,Finanzas,Auditoría,Cumplimiento Normativo">
+        <div class="team-avatar"><img src="assets/photo-04.png" alt="Ana Ulloa" /></div>
+        <div class="team-name">Ana Ulloa</div>
+        <div class="team-role">Contadora y Financiera</div>
+        <div class="team-divider"></div>
+        <div class="team-desc">Socia Directora de Ulloa & Asociados. Más de 15 años en asesoría contable, fiscal y financiera. Miembro del Instituto de Contadores Públicos Autorizados.</div>
+      </div>
+      <div class="team-card reveal delay-3" onclick="openModal(this)"
+        data-name="José Mercado"
+        data-role="Abogado"
+        data-photo=""
+        data-bio="José Alexander Mercado Gómez es abogado enfocado en las áreas de derecho migratorio, inmigratorio y derecho penal. Su práctica profesional está orientada a brindar asesoría y acompañamiento jurídico a personas y empresas en asuntos relacionados con procesos migratorios, solicitudes de visas, residencias, regularización de estatus migratorio y demás trámites vinculados a la movilidad internacional.
+
+Asimismo, desarrolla su ejercicio profesional en el ámbito del derecho penal, participando en la asistencia y representación de clientes en las distintas etapas del proceso penal, con especial atención a la protección de sus derechos y garantías fundamentales.
+
+Se distingue por su compromiso con la excelencia profesional, la atención personalizada y el estudio constante de la legislación, la jurisprudencia y las tendencias jurídicas aplicables a sus áreas de práctica. Su enfoque se basa en ofrecer soluciones legales claras, eficientes y adaptadas a las necesidades particulares de cada cliente, actuando siempre con responsabilidad, ética y dedicación."
+        data-tags="Derecho Privado,Contratos,Asesoría Corporativa">
+        <div class="team-avatar"><img src="assets/photo-03.png" alt="José Mercado" /></div>
+        <div class="team-name">José Mercado</div>
+        <div class="team-role">Abogado</div>
+        <div class="team-divider"></div>
+        <div class="team-desc">Abogado asociado con sólida formación en derecho privado y amplia experiencia en atención de clientes nacionales e internacionales.</div>
+      </div>
+      <div class="team-card reveal delay-1" onclick="openModal(this)"
+        data-name="Katherine Esther Reynoso Cárdenas"
+        data-role="Of Counsel – Abogada"
+        data-photo=""
+        data-bio="Katherine Esther Reynoso Cárdenas es abogada con formación sólida en Derecho Civil y Procesal Civil Contemporáneo, además de experiencia en asesoría legal integral tanto a personas físicas como jurídicas. Es egresada de la Universidad Tecnológica de Santiago (UTESA) en el año 2016, y cuenta con una Maestría en Derecho Civil y Procesal Civil Contemporáneo de la Universidad Abierta Para Adultos (UAPA), completada en 2021.
+
+Su formación se complementa con un Diplomado en Asesoría Migratoria Certificada (2025), lo que le permite ofrecer acompañamiento especializado en procesos relacionados con los Estados Unidos. Es miembro activo del Colegio de Abogados de la República Dominicana.
+
+Dentro de sus áreas de práctica se encuentran el Derecho Civil, el Derecho Corporativo, el Derecho Migratorio Estadounidense, así como las transferencias inmobiliarias y de vehículos de motor, brindando a sus clientes un acompañamiento jurídico claro y orientado a resultados."
+        data-tags="Derecho Civil,Derecho Corporativo,Derecho Migratorio,Transferencias Inmobiliarias">
+        <div class="team-avatar"><img src="assets/photo-07.png" alt="Katherine Esther Reynoso Cárdenas" /></div>
+        <div class="team-name">Katherine Esther Reynoso Cárdenas</div>
+        <div class="team-role">Of Counsel – Abogada</div>
+        <div class="team-divider"></div>
+        <div class="team-desc">Abogada especialista en Derecho Civil y Migratorio Estadounidense. Capacitada en Asesoría Migratoria Certificada y transferencias inmobiliarias y vehiculares.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PROCESO
+  ============================== -->
+  <section id="proceso">
+    <div class="section-header reveal">
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2 class="section-title">Un proceso <em>claro</em> de principio a fin</h2>
+    </div>
+    <div class="proceso-steps">
+      <div class="step-card reveal delay-1">
+        <div class="step-num">01</div>
+        <div class="step-title">Consulta inicial</div>
+        <div class="step-desc">Nos cuentas tu situación en detalle. Analizamos tu caso sin compromiso y te orientamos sobre las opciones disponibles.</div>
+      </div>
+      <div class="step-card reveal delay-2">
+        <div class="step-num">02</div>
+        <div class="step-title">Diagnóstico legal</div>
+        <div class="step-desc">Estudiamos tu caso en profundidad, identificamos riesgos y oportunidades, y definimos la mejor estrategia jurídica.</div>
+      </div>
+      <div class="step-card reveal delay-3">
+        <div class="step-num">03</div>
+        <div class="step-title">Acción y seguimiento</div>
+        <div class="step-desc">Ejecutamos la estrategia acordada, te mantenemos informado en cada paso y gestionamos todos los trámites necesarios.</div>
+      </div>
+      <div class="step-card reveal delay-4">
+        <div class="step-num">04</div>
+        <div class="step-title">Resolución</div>
+        <div class="step-desc">Trabajamos hasta conseguir el mejor resultado posible para tu caso, con transparencia total durante todo el proceso.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CONTACTO
+  ============================== -->
+  <section id="contacto">
+    <div class="contacto-grid">
+      <div>
+        <div class="reveal">
+          <div class="eyebrow" style="display:inline-flex;align-items:center;gap:.8rem;margin-bottom:1rem;">
+            <span style="width:24px;height:1px;background:var(--gold);display:inline-block;"></span>
+            Contacto
+          </div>
+          <h2 class="contact-info-title">
+            Empieza con una<br><em style="color:var(--gold);font-style:italic;">CONSULTA CON NOSOTROS</em>
+          </h2>
+        </div>
+        <p class="contact-info-sub reveal delay-1">
+          Estamos disponibles para atender tu consulta. Cuéntanos tu caso y un abogado del equipo se pondrá en contacto contigo a la brevedad.
+        </p>
+        <div class="contact-items reveal delay-2">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Teléfono</div>
+              <a href="tel:+18096198150" class="contact-item-value">+1-809-619-8150</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <a href="mailto:oficina@cslegal.com.do" class="contact-item-value">oficina@cslegal.com.do</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Ubicación</div>
+              <span class="contact-item-value">Puerto Plata, República Dominicana</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-socials reveal delay-3">
+          <a href="#" class="social-btn" title="Facebook">f</a>
+          <a href="#" class="social-btn" title="Instagram">in</a>
+          <a href="#" class="social-btn" title="LinkedIn">li</a>
+          <a href="#" class="social-btn" title="Twitter">tw</a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal-right delay-1">
+        <div class="form-title">Envíanos tu consulta</div>
+        <form onsubmit="handleForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Apellido</label>
+              <input type="text" class="form-control" placeholder="Tu apellido" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" placeholder="+1-809-000-0000" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Área de consulta</label>
+            <select class="form-control">
+              <option value="">Selecciona un área</option>
+              <option>Derecho Inmobiliario y Condominios</option>
+              <option>Inversión Extranjera</option>
+              <option>Derecho de Familia</option>
+              <option>Derecho Fiscal</option>
+              <option>Derecho Corporativo y Empresarial</option>
+              <option>Propiedad Intelectual</option>
+              <option>Derecho Migratorio</option>
+              <option>Litigios y Resolución de Conflictos</option>
+              <option>Derecho Laboral</option>
+              <option>Derecho Administrativo</option>
+              <option>Derecho Constitucional</option>
+              <option>Derecho de la Construcción</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Describe tu caso</label>
+            <textarea class="form-control" placeholder="Cuéntanos brevemente tu situación..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">CONSULTA CON NOSOTROS</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <img src="assets/Asset_2_4x.png" alt="Capellán Santana Legal" style="height:40px;width:auto;margin-bottom:0.5rem;display:block;" />
+        <div class="footer-tagline">Asesoría legal con profesionalismo, eficiencia y la diligencia que cada cliente merece.</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-title">La Firma</div>
+          <ul>
+            <li><a href="#firma">Quiénes somos</a></li>
+            <li><a href="#profesionales">El equipo</a></li>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Servicios</div>
+          <ul>
+            <li><a href="#areas">Derecho Inmobiliario</a></li>
+            <li><a href="#areas">Inversión Extranjera</a></li>
+            <li><a href="#areas">Derecho Corporativo</a></li>
+            <li><a href="#areas">Derecho Migratorio</a></li>
+            <li><a href="#areas">Ver todos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contacto</div>
+          <ul>
+            <li><a href="tel:+18096198150">+1-809-619-8150</a></li>
+            <li><a href="mailto:oficina@cslegal.com.do">oficina@cslegal.com.do</a></li>
+            <li><a href="#contacto">Consulta gratuita</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Capellán Santana Legal. Todos los derechos reservados.</div>
+      <div class="footer-legal">
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================
+       MODAL SERVICIOS
+  ============================== -->
+  <div class="svc-modal-overlay" id="svcModal" onclick="closeSvcModalOutside(event)">
+    <div class="svc-modal-box">
+      <div class="svc-modal-top" style="position:relative;">
+        <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:36px;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;display:none;" class="modal-handle"></div>
+      </div>
+      <button class="svc-modal-close" onclick="closeSvcModal()">✕</button>
+      <div class="svc-modal-inner">
+        <div class="svc-modal-icon" id="svcModalIcon"></div>
+        <div class="svc-modal-name" id="svcModalName"></div>
+        <div class="svc-modal-divider"></div>
+        <div class="svc-modal-desc" id="svcModalDesc"></div>
+        <ul class="svc-modal-list" id="svcModalList"></ul>
+        <a href="#contacto" class="svc-modal-cta" onclick="closeSvcModal()">CONSULTA CON NOSOTROS</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       MODAL EQUIPO
+  ============================== -->
+  <div class="modal-overlay" id="teamModal" onclick="closeModalOutside(event)">
+    <div class="modal-box">
+      <div class="modal-top" style="position:relative;">
+        <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:36px;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-body">
+        <img class="modal-photo" id="modalPhoto" src="" alt="" />
+        <div class="modal-info">
+          <div class="modal-name" id="modalName"></div>
+          <div class="modal-role" id="modalRole"></div>
+          <div class="modal-divider"></div>
+          <div class="modal-bio" id="modalBio"></div>
+          <div class="modal-tags" id="modalTags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+  <script>
+    // --- Mobile menu ---
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('hamburger');
+      const isOpen = menu.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    // --- Modal servicios ---
+    function openSvcModal(card) {
+      document.getElementById('svcModalIcon').innerHTML = card.dataset.icon;
+      document.getElementById('svcModalName').textContent = card.dataset.name;
+      document.getElementById('svcModalDesc').textContent = card.dataset.desc;
+      const items = card.dataset.items.split('|');
+      document.getElementById('svcModalList').innerHTML = items.map(i => `<li>${i.trim()}</li>`).join('');
+      document.getElementById('svcModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSvcModal() {
+      document.getElementById('svcModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeSvcModalOutside(e) {
+      if (e.target === document.getElementById('svcModal')) closeSvcModal();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeSvcModal(); } });
+
+    // --- Modal equipo ---
+    function openModal(card) {
+      document.getElementById('modalPhoto').src = card.dataset.photo;
+      document.getElementById('modalPhoto').alt = card.dataset.name;
+      document.getElementById('modalName').textContent = card.dataset.name;
+      document.getElementById('modalRole').textContent = card.dataset.role;
+      const bioText = card.dataset.bio.replace(/&quot;/g, '"');
+      document.getElementById('modalBio').innerHTML = bioText.split('\n\n').map(p => `<p style="margin-bottom:0.9rem">${p.trim()}</p>`).join('');
+      const tags = card.dataset.tags.split(',');
+      document.getElementById('modalTags').innerHTML = tags.map(t => `<span class="modal-tag">${t.trim()}</span>`).join('');
+      document.getElementById('teamModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('teamModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeModalOutside(e) {
+      if (e.target === document.getElementById('teamModal')) closeModal();
+    }
+
+    // --- NAV scroll ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // --- Scroll reveal (Intersection Observer) ---
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // --- Counter animation ---
+    function animateCount(el, target) {
+      let current = 0;
+      const duration = 1600;
+      const step = target / (duration / 16);
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          el.textContent = target + (target >= 5 ? '+' : '');
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current);
+        }
+      }, 16);
+    }
+
+    const counters = document.querySelectorAll('[data-count]');
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.count);
+          animateCount(entry.target, target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => countObserver.observe(c));
+
+    // --- Form handler ---
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = '¡Consulta enviada! Te contactamos pronto.';
+      btn.style.background = '#2d5a27';
+      btn.style.color = '#fff';
+      btn.disabled = true;
+    }
+
+    // --- Smooth active nav link ---
+    const sections = document.querySelectorAll('section[id], div[id="banner"]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 200) current = sec.id;
+      });
+      navAnchors.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
